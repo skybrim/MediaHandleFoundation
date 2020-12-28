@@ -14,6 +14,13 @@
 		B8C44E6F2599E59600B2A20C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C44E6E2599E59600B2A20C /* Assets.xcassets */; };
 		B8C44E722599E59600B2A20C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C44E702599E59600B2A20C /* LaunchScreen.storyboard */; };
 		B8C44E752599E59600B2A20C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C44E742599E59600B2A20C /* main.m */; };
+		B8C44E842599E63400B2A20C /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C44E7D2599E63400B2A20C /* libavutil.a */; };
+		B8C44E852599E63400B2A20C /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C44E7E2599E63400B2A20C /* libswresample.a */; };
+		B8C44E862599E63400B2A20C /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C44E7F2599E63400B2A20C /* libavdevice.a */; };
+		B8C44E872599E63400B2A20C /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C44E802599E63400B2A20C /* libavcodec.a */; };
+		B8C44E882599E63400B2A20C /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C44E812599E63400B2A20C /* libavformat.a */; };
+		B8C44E892599E63400B2A20C /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C44E822599E63400B2A20C /* libavfilter.a */; };
+		B8C44E8A2599E63400B2A20C /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C44E832599E63400B2A20C /* libswscale.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,13 @@
 		B8C44E712599E59600B2A20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8C44E732599E59600B2A20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8C44E742599E59600B2A20C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B8C44E7D2599E63400B2A20C /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = "FFmpeg-iOS/lib/libavutil.a"; sourceTree = "<group>"; };
+		B8C44E7E2599E63400B2A20C /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = "FFmpeg-iOS/lib/libswresample.a"; sourceTree = "<group>"; };
+		B8C44E7F2599E63400B2A20C /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = "FFmpeg-iOS/lib/libavdevice.a"; sourceTree = "<group>"; };
+		B8C44E802599E63400B2A20C /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = "FFmpeg-iOS/lib/libavcodec.a"; sourceTree = "<group>"; };
+		B8C44E812599E63400B2A20C /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = "FFmpeg-iOS/lib/libavformat.a"; sourceTree = "<group>"; };
+		B8C44E822599E63400B2A20C /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = "FFmpeg-iOS/lib/libavfilter.a"; sourceTree = "<group>"; };
+		B8C44E832599E63400B2A20C /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = "FFmpeg-iOS/lib/libswscale.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +50,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C44E842599E63400B2A20C /* libavutil.a in Frameworks */,
+				B8C44E852599E63400B2A20C /* libswresample.a in Frameworks */,
+				B8C44E862599E63400B2A20C /* libavdevice.a in Frameworks */,
+				B8C44E872599E63400B2A20C /* libavcodec.a in Frameworks */,
+				B8C44E882599E63400B2A20C /* libavformat.a in Frameworks */,
+				B8C44E892599E63400B2A20C /* libavfilter.a in Frameworks */,
+				B8C44E8A2599E63400B2A20C /* libswscale.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +68,7 @@
 			children = (
 				B8C44E612599E59600B2A20C /* MediaHandleFoundation */,
 				B8C44E602599E59600B2A20C /* Products */,
+				B8C44E7C2599E63400B2A20C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +96,20 @@
 				B8C44E742599E59600B2A20C /* main.m */,
 			);
 			path = MediaHandleFoundation;
+			sourceTree = "<group>";
+		};
+		B8C44E7C2599E63400B2A20C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8C44E802599E63400B2A20C /* libavcodec.a */,
+				B8C44E7F2599E63400B2A20C /* libavdevice.a */,
+				B8C44E822599E63400B2A20C /* libavfilter.a */,
+				B8C44E812599E63400B2A20C /* libavformat.a */,
+				B8C44E7D2599E63400B2A20C /* libavutil.a */,
+				B8C44E7E2599E63400B2A20C /* libswresample.a */,
+				B8C44E832599E63400B2A20C /* libswscale.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,12 +327,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg-iOS/include";
 				INFOPLIST_FILE = MediaHandleFoundation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FFmpeg-iOS/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiley.MediaHandleFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -309,12 +351,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FFmpeg-iOS/include";
 				INFOPLIST_FILE = MediaHandleFoundation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FFmpeg-iOS/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiley.MediaHandleFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";

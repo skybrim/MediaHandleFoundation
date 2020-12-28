@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#include <libavutil/log.h>
 
 @interface ViewController ()
 
@@ -16,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    av_log(NULL, AV_LOG_ERROR, "error");
 }
 
 
