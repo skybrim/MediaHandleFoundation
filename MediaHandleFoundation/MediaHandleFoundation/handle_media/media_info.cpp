@@ -15,12 +15,15 @@ int media_info(const char *src) {
     AVFormatContext *fmt_ctx = nullptr;
 
     if (src == NULL) return -1;
-    ret = avformat_open_input(&fmt_ctx, src, nullptr, nullptr);
-    if (ret<0) {
-        av_log(NULL, AV_LOG_ERROR, "can not open file: %s\n", av_err2str(ret));
+    if ((ret = avformat_open_input(&fmt_ctx, src, nullptr, nullptr))<0) goto __close;
+    av_dump_format(fmt_ctx, 0, src, 0);
+    
+__close:
+    avformat_close_input(&fmt_ctx);
+    if (ret < 0 && ret != AVERROR_EOF) {
+        av_log(NULL, AV_LOG_ERROR, "error: %s\n", av_err2str(ret));
         return -1;
     }
-    av_dump_format(fmt_ctx, 0, src, 0);
-    avformat_close_input(&fmt_ctx);
+    
     return 0;
 }

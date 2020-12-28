@@ -33,10 +33,10 @@ int remuxing(const char *src, const char *dst) {
     AVFormatContext *out_fmt_ctx = nullptr;
     
     if (src == NULL || dst == NULL) return -1;
-    if ((ret = avformat_open_input(&in_fmt_ctx, src, 0, 0)) < 0)  goto end;
+    if ((ret = avformat_open_input(&in_fmt_ctx, src, 0, 0)) < 0)  goto __close;
     
     // 获取流的信息
-    if ((ret = avformat_find_stream_info(in_fmt_ctx, 0)) < 0)  goto end;
+    if ((ret = avformat_find_stream_info(in_fmt_ctx, 0)) < 0)  goto __close;
     av_dump_format(in_fmt_ctx, 0, src, 0);
     
     // 创建输出文件上下文
@@ -44,7 +44,7 @@ int remuxing(const char *src, const char *dst) {
     if (!out_fmt_ctx) {
         av_log(NULL, AV_LOG_ERROR, "can not create output context\n");
         ret = AVERROR_UNKNOWN;
-        goto end;
+        goto __close;
     }
     // 赋值输出文件格式
     out_fmt = out_fmt_ctx->oformat;
@@ -67,11 +67,10 @@ int remuxing(const char *src, const char *dst) {
         out_stream = avformat_new_stream(out_fmt_ctx, NULL);
         if (!out_stream) {
             ret = AVERROR_UNKNOWN;
-            goto end;
+            goto __close;
         }
         // 赋值源文件的编解码器
-        ret = avcodec_parameters_copy(out_stream->codecpar, in_codecpar);
-        if (ret < 0)  goto end;
+        if ((ret = avcodec_parameters_copy(out_stream->codecpar, in_codecpar)) < 0)  goto __close;
         // 标记
         out_stream->codecpar->codec_tag = 0;
     }
@@ -79,13 +78,11 @@ int remuxing(const char *src, const char *dst) {
     
     // 打开目标文件
     if (!(out_fmt->flags & AVFMT_NOFILE)) {
-        ret = avio_open(&out_fmt_ctx->pb, dst, AVIO_FLAG_WRITE);
-        if (ret < 0) goto end;
+        if ((ret = avio_open(&out_fmt_ctx->pb, dst, AVIO_FLAG_WRITE)) < 0) goto __close;
     }
     
     // 写入媒体文件头信息
-    ret = avformat_write_header(out_fmt_ctx, NULL);
-    if (ret < 0) goto end;
+    if ((ret = avformat_write_header(out_fmt_ctx, NULL)) < 0) goto __close;
     
     // 循环写入数据
     while (true) {
@@ -127,7 +124,7 @@ int remuxing(const char *src, const char *dst) {
     // 写入媒体文件尾信息
     av_write_trailer(out_fmt_ctx);
     
-end:
+__close:
     avformat_close_input(&in_fmt_ctx);
     if (out_fmt_ctx && !(out_fmt_ctx->flags & AVFMT_NOFILE))
         avio_closep(&out_fmt_ctx->pb);

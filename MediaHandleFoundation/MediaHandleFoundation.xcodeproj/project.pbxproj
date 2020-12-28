@@ -170,11 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				B8C44E922599E70E00B2A20C /* encode_video.hpp */,
-				B8C44E932599E70E00B2A20C /* decode_audio.cpp */,
+				B8C44E972599E70E00B2A20C /* encode_video.cpp */,
+				B8C44E962599E70E00B2A20C /* decode_video.hpp */,
 				B8C44E942599E70E00B2A20C /* decode_video.cpp */,
 				B8C44E952599E70E00B2A20C /* decode_audio.hpp */,
-				B8C44E962599E70E00B2A20C /* decode_video.hpp */,
-				B8C44E972599E70E00B2A20C /* encode_video.cpp */,
+				B8C44E932599E70E00B2A20C /* decode_audio.cpp */,
 			);
 			path = codec;
 			sourceTree = "<group>";
@@ -182,16 +182,16 @@
 		B8C44E982599E70E00B2A20C /* handle_media */ = {
 			isa = PBXGroup;
 			children = (
+				B8C44EA02599E70E00B2A20C /* media_info.hpp */,
 				B8C44E992599E70E00B2A20C /* media_info.cpp */,
+				B8C44EA12599E70E00B2A20C /* remuxing.hpp */,
 				B8C44E9A2599E70E00B2A20C /* remuxing.cpp */,
 				B8C44E9B2599E70E00B2A20C /* cut_video.hpp */,
-				B8C44E9C2599E70E00B2A20C /* extract_audio.hpp */,
-				B8C44E9D2599E70E00B2A20C /* extract_video.hpp */,
-				B8C44E9E2599E70E00B2A20C /* extract_audio.cpp */,
-				B8C44E9F2599E70E00B2A20C /* extract_video.cpp */,
-				B8C44EA02599E70E00B2A20C /* media_info.hpp */,
-				B8C44EA12599E70E00B2A20C /* remuxing.hpp */,
 				B8C44EA22599E70E00B2A20C /* cut_video.cpp */,
+				B8C44E9C2599E70E00B2A20C /* extract_audio.hpp */,
+				B8C44E9E2599E70E00B2A20C /* extract_audio.cpp */,
+				B8C44E9D2599E70E00B2A20C /* extract_video.hpp */,
+				B8C44E9F2599E70E00B2A20C /* extract_video.cpp */,
 			);
 			path = handle_media;
 			sourceTree = "<group>";
