@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#include <libavutil/log.h>
+#include "media_info.hpp"
 
 @interface ViewController ()
 
@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     
     
-    av_log(NULL, AV_LOG_ERROR, "error");
+    
 }
 
 
